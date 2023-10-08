@@ -1,0 +1,21 @@
+.Wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    // overflow: hidden;
+    // height: 100vh;
+    // .LeftSidebar {
+    //     position: absolute;
+    //     // left: -100%;
+    // }
+
+    // .Content {
+    //     position: absolute;
+    //     // left: 0%;
+    // }
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}

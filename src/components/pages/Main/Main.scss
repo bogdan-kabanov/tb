@@ -1,0 +1,133 @@
+@import '../../../assets/sass/animation';
+
+.Main {
+    display: flex;
+    flex-direction: column;
+
+    .MainSwiper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        // height: calc(100vh - 98px);
+        height: 100vh;
+
+        .SlideWrapper {
+            max-height: 100vh;
+        }
+
+        .swiper-pagination {
+            position: absolute;
+            top: calc(50% - 76px / 2);
+            right: 35px;
+
+            .swiper-pagination-bullet {
+                margin-top: 30px;
+                margin-bottom: 30px;
+                position: relative;
+                height: 24px;
+                width: 24px;
+                transition: .6s;
+
+                &::after {
+                    transition: .6s;
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                }
+            }
+
+            .swiper-pagination-bullet:nth-child(1) {
+                &::after {
+                    animation: sp1 linear infinite;
+                    animation-duration: 2s;
+                    animation-play-state: paused;
+                }
+            }
+
+            .swiper-pagination-bullet:nth-child(2) {
+                &::after {
+                    animation: sp2 linear infinite;
+                    animation-duration: 2s;
+                    animation-play-state: paused;
+                }
+            }
+
+            .swiper-pagination-bullet:nth-child(3) {
+                &::after {
+                    animation: sp3 linear infinite;
+                    animation-duration: 2s;
+                    animation-play-state: paused;
+                }
+            }
+
+            .swiper-pagination-bullet-active {
+                &::after {
+                    animation-play-state: running !important;
+                }
+            }
+        }
+    }
+
+    .ContactFormSlide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .MainForm {
+        width: 625px;
+        padding: 45px 40px;
+
+        .Label:not(:first-child) {
+            display: block;
+            margin-top: 30px;
+        }
+
+        .Button {
+            margin-top: 35px;
+        }
+    }
+
+    .AboutWe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .AboutWe_Content {
+            max-width: 850px;
+
+            .Paragraph {
+                line-height: 24px;
+            }
+
+            .Paragraph:not(:first-child) {
+                margin-top: 30px;
+            }
+        }
+    }
+
+    .ImageDocs {
+        height: 100%;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 80px;
+        padding-right: 80px;
+        .image {
+            cursor: pointer;
+            transition: .3s;
+            width: 80%;
+
+            &:hover {
+
+                transform: scale(1.1);
+            }
+        }
+    }
+}

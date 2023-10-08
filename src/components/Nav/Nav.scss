@@ -1,0 +1,24 @@
+.Nav {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 80px;
+    position: absolute;
+    right: 0;
+    z-index: 99;
+
+    .NavLink {
+        mix-blend-mode: difference;
+        text-decoration: none;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+        font-family: 'Inter', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 145.523%;
+    }
+}

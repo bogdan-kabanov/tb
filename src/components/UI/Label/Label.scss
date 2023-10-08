@@ -1,0 +1,16 @@
+.Label {
+    cursor: pointer;
+    .Label_Title {
+        display: flex;
+        margin-bottom: 10px;
+        font-family: 'Inter', sans-serif;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+
+    .Input {
+        width: 100%;
+    }
+}

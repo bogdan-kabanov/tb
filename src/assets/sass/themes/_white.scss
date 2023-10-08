@@ -1,0 +1,125 @@
+$BLUE: #4260FF;
+$WHITE: #FFFFFF;
+$TEXT: #272829;
+
+.Theme_White {
+    .LeftSidebar {
+        background-color: $BLUE;
+
+        .TitleSite {
+            color: $WHITE;
+        }
+
+        .SubTitle {
+            color: $WHITE;
+        }
+
+        .SidebarSwiper_Wrapper {
+            .SidebarSwiper_Title {
+                color: $WHITE;
+            }
+
+            .SidebarSwiper {
+                .SlideObject {
+                    background-color: $WHITE;
+                }
+            }
+        }
+    }
+
+    .Input {
+        border: 1px solid #959595;
+        background: #FFF;
+        color: #959595;
+    }
+
+    .Label {
+        .Label_Title {
+            color: $TEXT;
+        }
+    }
+
+
+    .Form {
+        .FormTitle {
+            color: #272829;
+        }
+
+        .Button {
+            color: $WHITE;
+            background-color: $BLUE;
+        }
+    }
+
+    .Paragraph {
+        color: $WHITE;
+    }
+
+    .Main {
+        .MainForm {
+            background-color: $WHITE;
+            box-shadow: (5px 0px 10px rgba(148, 148, 148, 0.10)), (19px 0px 19px rgba(148, 148, 148, 0.09)), (42px 0px 25px rgba(148, 148, 148, 0.05)), (75px 0px 30px rgba(148, 148, 148, 0.01)), (117px 0px 33px rgba(148, 148, 148, 0.00));
+        }
+
+        .MainSwiper {
+            .swiper-pagination {
+                .swiper-pagination-bullet {
+                    opacity: 1;
+                }
+
+                .swiper-pagination-bullet-active {
+                    box-shadow: inset 0px 0px 0px 0px $BLUE;
+                    background-color: $BLUE;
+                    border-color: $WHITE;
+                }
+            }
+
+            .pagination-dark {
+                background-color: $BLUE;
+                border: 2px solid $BLUE;
+                box-shadow: inset 0px 0px 0px 10px $WHITE;
+
+                &::after {
+                    background-color: $BLUE;
+                }
+            }
+
+            .pagination-light {
+                background-color: $WHITE;
+                border: 2px solid $WHITE;
+                box-shadow: inset 0px 0px 0px 10px $BLUE;
+
+                &::after {
+                    background-color: $WHITE;
+                }
+            }
+
+            .AboutWe {
+                background-color: $BLUE;
+
+                .AboutWe_Content {
+                    .Headline {
+                        color: $WHITE;
+                    }
+                }
+            }
+        }
+    }
+
+    .Contact {
+        .Paragraph {
+            color: $TEXT;
+        }
+    }
+
+    .Nav {
+        background-color: transparent;
+        .NavLink {
+            color: $TEXT;
+        }
+    }
+
+    .Footer {
+        background-color: $BLUE;
+    }
+}

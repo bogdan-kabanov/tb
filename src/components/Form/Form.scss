@@ -1,0 +1,16 @@
+.Form {
+    .FormRow {
+        display: flex;
+        column-gap: 20px;
+    }
+
+    .FormTitle {
+        font-family: 'Inter', sans-serif;
+        font-size: 44px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 30px;
+        display: block;
+    }
+}

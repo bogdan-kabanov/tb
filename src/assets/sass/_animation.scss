@@ -1,0 +1,29 @@
+@keyframes sp1{
+    from {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(25px);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(25px);
+    }
+}
+
+@keyframes sp2{
+    from {
+        transform: translate(-50%, -50%) rotate(320deg) translateX(25px);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(680deg) translateX(25px);
+    }
+}
+
+@keyframes sp3{
+    from {
+        transform: translate(-50%, -50%) rotate(20deg) translateX(25px);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(380deg) translateX(25px);
+    }
+}
