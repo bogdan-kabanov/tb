@@ -1,3 +1,12 @@
 .Footer {
-    // height: 1000px;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+    padding-left: 40px;
+    z-index: 3;
+    .Footer_Copyright {
+        font-family: 'Inter', sans-serif;
+    }
 }

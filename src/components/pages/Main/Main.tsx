@@ -11,13 +11,18 @@ import SwiperProps from 'swiper';
 import Paragraph from '../../UI/Paragraph/Paragraph';
 import Headline from '../../UI/Headline/Headline';
 import { useRef, useEffect, useState } from 'react';
-
 import FsLightbox from "fslightbox-react";
 
 import doc1 from '../../../assets/licenziya_img_one.png'
 import doc2 from '../../../assets/licenziya_img_waifu2x_art_scan_noise1.png'
-
+import { useDispatch } from 'react-redux';
+import { addClassName, removeClassName } from '../../../store/NavSlice'
 function Main() {
+
+    const dispatch = useDispatch();
+    const addWhiteColor = () => dispatch(addClassName('NavLight'))
+    const removeWhiteColor = () => dispatch(removeClassName('NavLight'))
+
     const [toggler, setToggler] = useState(false);
     const [slide, setSlide] = useState(0);
 
@@ -32,11 +37,13 @@ function Main() {
             swiper.pagination.bullets.forEach((bullet) => {
                 bullet.classList.remove('pagination-dark');
                 bullet.classList.add('pagination-light');
+                addWhiteColor()
             });
         } else {
             swiper.pagination.bullets.forEach((bullet) => {
                 bullet.classList.add('pagination-dark');
                 bullet.classList.remove('pagination-light');
+                removeWhiteColor()
             });
         }
     }
@@ -45,7 +52,7 @@ function Main() {
 
     function smoothScrollTo(y: number): Promise<void> {
         return new Promise<void>(resolve => {
-            const maxScrollSpeed = 35;
+            const maxScrollSpeed = 5;
             const scrollInterval = setInterval(() => {
                 const distance = y - window.scrollY;
                 const scrollSpeed = Math.min(Math.abs(distance), maxScrollSpeed);
@@ -60,30 +67,31 @@ function Main() {
     }
 
     let animation: boolean = true
-
     useEffect(() => {
         const swiper = swiperRef.current;
         if (window.scrollY == 0) {
             document.body.style.overflow = 'hidden'
         }
+
         const checkScroll = async (event: WheelEvent) => {
+            const topScroll: number = 100
             if (swiper) {
                 const swiperRect = swiper.el.getBoundingClientRect();
                 const lastSlideRect = swiper.slides[swiper.slides.length - 1].getBoundingClientRect()
 
-                if (swiperRect.top <= 0 && swiperRect.bottom >= window.innerHeight) {
+                if (swiperRect.top <= 0 && swiperRect.bottom >= topScroll) {
                     document.body.style.overflow = 'hidden';
                     swiper.mousewheel.enable();
                 }
 
-                if (animation && lastSlideRect.top <= swiperRect.top && window.scrollY <= window.innerHeight && event.deltaY > 0) {
+                if (animation && lastSlideRect.top <= swiperRect.top && window.scrollY <= topScroll && event.deltaY > 0) {
                     animation = false
                     swiper.mousewheel.disable();
-                    smoothScrollTo(window.innerHeight + 1)
+                    smoothScrollTo(topScroll)
                     document.body.style.overflow = 'auto';
                 }
 
-                if (animation && window.scrollY <= window.innerHeight + 1 && event.deltaY < 0) {
+                if (animation && window.scrollY <= topScroll && event.deltaY < 0) {
                     animation = false
                     swiper.mousewheel.enable();
                     document.body.style.overflow = 'hidden'
@@ -121,7 +129,6 @@ function Main() {
                     }}
                     onSwiper={(swiper) => (swiperRef.current = swiper)}
                     pagination={{
-                        clickable: true,
                         renderBullet: function (_index, className) {
                             return `<span class="${className} pagination-dark"></span>`;
                         }
@@ -161,11 +168,13 @@ function Main() {
                     <SwiperSlide className="SlideWrapper">
                         <div className="ImageDocs">
                             <img
+                                className='ImageDocs_Image'
                                 src={doc1}
                                 alt="Изображение 1"
                                 onClick={() => handleImageClick(1)}
                             />
                             <img
+                                className='ImageDocs_Image'
                                 src={doc2}
                                 alt="Изображение 2"
                                 onClick={() => handleImageClick(2)}

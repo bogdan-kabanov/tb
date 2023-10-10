@@ -1,12 +1,14 @@
 import './Nav.scss'
 import { NavProps } from '../../types/ComponentTypes'
+import { useSelector } from 'react-redux';
 
 function Nav(props: NavProps) {
-        return (
-            <div className="Nav">
-                {props.children}
-            </div>
-        )
-    }
+    const navClass = useSelector(state => state.navs.navClass)
+    return (
+        <div className={navClass.join(' ')}>
+            {props.children}
+        </div >
+    )
+}
 
 export default Nav

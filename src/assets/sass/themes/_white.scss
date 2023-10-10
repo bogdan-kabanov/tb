@@ -114,12 +114,24 @@ $TEXT: #272829;
 
     .Nav {
         background-color: transparent;
+
         .NavLink {
             color: $TEXT;
         }
     }
 
+    .NavLight {
+        .NavLink {
+            color: $WHITE;
+        }
+    }
+
     .Footer {
         background-color: $BLUE;
+        border-top: 1px solid $TEXT;
+        .Footer_Copyright {
+            color: $WHITE;
+        }
     }
+
 }
