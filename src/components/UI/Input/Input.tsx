@@ -1,5 +1,5 @@
 import './Input.scss'
-import { InputProps } from '../../../types/ComponentTypes'
+import { InputProps } from '@/types/ComponentTypes'
 
 function Input(props: InputProps) {
 

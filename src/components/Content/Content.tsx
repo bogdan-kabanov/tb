@@ -1,5 +1,5 @@
 import './Content.scss'
-import { ContentProps } from '../../types/ComponentTypes'
+import { ContentProps } from '@/types/ComponentTypes'
 
 function Content(props: ContentProps) {
     return (

@@ -1,12 +1,14 @@
-import Logotype from "../UI/Logotype/Logotype"
-import logoUrl from "../../assets/logotype.svg"
-import SiteName from "../UI/SiteName/SiteName"
+import Logotype from "@components/UI/Logotype/Logotype"
+
+import SiteName from "@components/UI/SiteName/SiteName"
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import 'swiper/css';
 import './LeftSidebar.scss';
-// test
 
-import img from "../../assets/project_image/sa-235.jpg"
+import img from "@assets/project_image/sa-235.jpg"
+import logoUrl from "@assets/logotype.svg"
+
 import { Autoplay, Mousewheel } from "swiper/modules";
 import { useEffect, useState } from "react";
 function LeftSidebar() {

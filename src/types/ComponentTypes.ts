@@ -4,6 +4,17 @@ interface PropsWithChildren {
   children: ReactNode;
 }
 
+export interface NavInitial {
+  navClass: string[]
+}
+
+
+export interface NavStateType {
+  navs: {
+      navClass: string[]
+  }
+}
+
 export interface SiteNameProps {
   sitename: string;
 }

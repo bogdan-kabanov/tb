@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './Footer.scss'
 
 function Footer() {

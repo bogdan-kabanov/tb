@@ -1,5 +1,5 @@
 import './Button.scss'
-import { ButtonProps } from '../../../types/ComponentTypes'
+import { ButtonProps } from '@/types/ComponentTypes'
 
 function Button(props: ButtonProps) {
     const { children, type } = props

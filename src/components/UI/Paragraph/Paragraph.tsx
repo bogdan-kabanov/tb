@@ -1,5 +1,5 @@
 import './Paragraph.scss'
-import { ParagraphProps } from '../../../types/ComponentTypes'
+import { ParagraphProps } from '@/types/ComponentTypes'
 
 function Paragraph(props: ParagraphProps) {
     const { children } = props

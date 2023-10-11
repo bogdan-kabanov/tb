@@ -1,5 +1,5 @@
 import "./SiteName.scss"
-import { SiteNameProps } from '../../../types/ComponentTypes'
+import { SiteNameProps } from '@/types/ComponentTypes'
 
 function SiteName(props: SiteNameProps) {
     return (

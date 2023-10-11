@@ -1,6 +1,6 @@
 import Input from "../Input/Input"
 import './Label.scss'
-import { LabelProps } from '../../../types/ComponentTypes'
+import { LabelProps } from '@//types/ComponentTypes'
 
 function Label(props: LabelProps) {
 

@@ -1,11 +1,14 @@
 import { Link, Route, Routes } from 'react-router-dom'
+
 import './App.scss'
-import Content from './components/Content/Content'
-import LeftSidebar from './components/LeftSidebar/LeftSidebar'
-import Nav from './components/Nav/Nav'
-import Main from './components/pages/Main/Main'
-import Contact from './components/pages/Contact/Contact'
-import Footer from './components/Footer/Footer'
+
+import Content from '@components/Content/Content'
+import LeftSidebar from '@components/LeftSidebar/LeftSidebar'
+import Nav from '@components/Nav/Nav'
+import Main from '@components/pages/Main/Main'
+import Contact from '@components/pages/Contact/Contact'
+import Footer from '@components/Footer/Footer'
+
 function App() {
   return (
     <div className='Wrapper Theme_White'>

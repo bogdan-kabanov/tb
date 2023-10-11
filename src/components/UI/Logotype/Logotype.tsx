@@ -1,4 +1,4 @@
-import { LogotypeProps } from '../../../types/ComponentTypes'
+import { LogotypeProps } from '@/types/ComponentTypes'
 
 function Logotype(props: LogotypeProps) {
     return (

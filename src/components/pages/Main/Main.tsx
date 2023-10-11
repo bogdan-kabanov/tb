@@ -1,27 +1,32 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperProps from 'swiper';
+import { Mousewheel, Pagination } from "swiper/modules";
+import FsLightbox from "fslightbox-react";
+
+import { useRef, useEffect, useState } from 'react';
+
+import Form from "@components/Form/Form"
+import Label from '@components/UI/Label/Label';
+import Button from '@components/UI/Button/Button';
+import Paragraph from '@components/UI/Paragraph/Paragraph';
+import Headline from '@components/UI/Headline/Headline';
+
+import doc1 from '@assets/licenziya_img_one.png'
+import doc2 from '@assets/licenziya_img_waifu2x_art_scan_noise1.png'
+
+import { useDispatch } from 'react-redux';
+import { addClassName, removeClassName } from '@/store/NavSlice'
+
 import 'swiper/css';
 import 'swiper/css/mousewheel';
 import 'swiper/swiper-bundle.css';
-import { Mousewheel, Pagination } from "swiper/modules";
 import './Main.scss'
-import Form from '../../Form/Form';
-import Label from '../../UI/Label/Label';
-import Button from '../../UI/Button/Button';
-import SwiperProps from 'swiper';
-import Paragraph from '../../UI/Paragraph/Paragraph';
-import Headline from '../../UI/Headline/Headline';
-import { useRef, useEffect, useState } from 'react';
-import FsLightbox from "fslightbox-react";
 
-import doc1 from '../../../assets/licenziya_img_one.png'
-import doc2 from '../../../assets/licenziya_img_waifu2x_art_scan_noise1.png'
-import { useDispatch } from 'react-redux';
-import { addClassName, removeClassName } from '../../../store/NavSlice'
 function Main() {
-
     const dispatch = useDispatch();
-    const addWhiteColor = () => dispatch(addClassName('NavLight'))
-    const removeWhiteColor = () => dispatch(removeClassName('NavLight'))
+
+    const addWhiteColor = () => dispatch(addClassName({navClass: 'NavLight'}))
+    const removeWhiteColor = () => dispatch(removeClassName({navClass: 'NavLight'}))
 
     const [toggler, setToggler] = useState(false);
     const [slide, setSlide] = useState(0);
@@ -37,14 +42,14 @@ function Main() {
             swiper.pagination.bullets.forEach((bullet) => {
                 bullet.classList.remove('pagination-dark');
                 bullet.classList.add('pagination-light');
-                addWhiteColor()
             });
+            addWhiteColor()
         } else {
             swiper.pagination.bullets.forEach((bullet) => {
                 bullet.classList.add('pagination-dark');
                 bullet.classList.remove('pagination-light');
-                removeWhiteColor()
             });
+            removeWhiteColor()
         }
     }
 

@@ -1,5 +1,5 @@
 import './Headline.scss'
-import { HeadlineProps } from '../../../types/ComponentTypes'
+import { HeadlineProps } from '@/types/ComponentTypes'
 
 function Headline(props: HeadlineProps) {
     const { children } = props
