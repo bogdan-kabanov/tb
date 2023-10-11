@@ -15,7 +15,7 @@ import doc1 from '@assets/licenziya_img_one.png'
 import doc2 from '@assets/licenziya_img_waifu2x_art_scan_noise1.png'
 
 import { useDispatch } from 'react-redux';
-import { addClassName, removeClassName } from '@/store/NavSlice'
+import { addClassName, removeClassName } from '@/store/StyleClass';
 
 import 'swiper/css';
 import 'swiper/css/mousewheel';
@@ -25,8 +25,15 @@ import './Main.scss'
 function Main() {
     const dispatch = useDispatch();
 
-    const addWhiteColor = () => dispatch(addClassName({navClass: 'NavLight'}))
-    const removeWhiteColor = () => dispatch(removeClassName({navClass: 'NavLight'}))
+    const addWhiteColor = () => dispatch(addClassName({
+            nameArray: 'Nav',
+            classArray: ['NavLight']
+        }
+    ))
+    const removeWhiteColor = () => dispatch(removeClassName({
+        nameArray: 'Nav',
+        classArray: ['NavLight']
+    }))
 
     const [toggler, setToggler] = useState(false);
     const [slide, setSlide] = useState(0);
@@ -113,7 +120,6 @@ function Main() {
 
     return (
         <div className="Main" >
-            <div className="element"></div>
             <div className="swiper-container">
                 <Swiper
                     centeredSlidesBounds={true}
@@ -135,7 +141,7 @@ function Main() {
                     onSwiper={(swiper) => (swiperRef.current = swiper)}
                     pagination={{
                         renderBullet: function (_index, className) {
-                            return `<span class="${className} pagination-dark"></span>`;
+                            return `<span class_css="${className} pagination-dark"></span>`;
                         }
                     }}
                 >

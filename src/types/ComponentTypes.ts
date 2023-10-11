@@ -4,14 +4,20 @@ interface PropsWithChildren {
   children: ReactNode;
 }
 
-export interface NavInitial {
-  navClass: string[]
+export interface StyleClassStateType extends ClassArray {
+  dinamicClassArray: {
+    classArray: {
+      Nav: string[],
+      Content: string[]
+    }
+  }
 }
 
-
-export interface NavStateType {
-  navs: {
-      navClass: string[]
+export interface ClassArray {
+  classArray: {
+    [key: string]: string | string[],
+    Nav: string[],
+    Content: string[]
   }
 }
 
@@ -19,7 +25,7 @@ export interface SiteNameProps {
   sitename: string;
 }
 
-export interface ParagraphProps extends PropsWithChildren {}
+export interface ParagraphProps extends PropsWithChildren { }
 
 export interface LogotypeProps {
   url: string,
@@ -41,9 +47,11 @@ export interface HeadlineProps extends PropsWithChildren {
 }
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
-export interface NavProps extends PropsWithChildren {}
+export interface NavProps extends PropsWithChildren { }
 
-export interface ContentProps extends PropsWithChildren {}
+export interface ContentProps extends PropsWithChildren { }
+
+export interface ContainerProps extends PropsWithChildren { }

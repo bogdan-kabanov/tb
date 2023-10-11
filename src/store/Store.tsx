@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import navReducer from "./NavSlice"
+import StyleClassReducer from "./StyleClass"
 
 export default configureStore({
     reducer: {
-        navs: navReducer
+        dinamicClassArray: StyleClassReducer,
     }
 });
